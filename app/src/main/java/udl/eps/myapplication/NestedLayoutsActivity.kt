@@ -7,11 +7,16 @@ import android.os.Bundle
 import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import udl.eps.myapplication.*
+import udl.eps.myapplication.databinding.NestedLayoutsBinding
+import udl.eps.myapplication.databinding.RelativeLayoutsBinding
 
 class NestedLayoutsActivity : AppCompatActivity() {
+    private lateinit var binding: NestedLayoutsBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.nested_layouts)
+        binding = NestedLayoutsBinding.inflate(layoutInflater)
+        setContentView(binding.root)
     }
 
     /** Switches to the given class (which must be a subclass of Activity).
