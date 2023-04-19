@@ -1,10 +1,8 @@
 package udl.eps.myapplication
 
 import android.app.Activity
-import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import udl.eps.myapplication.databinding.MainBinding
 
@@ -24,7 +22,7 @@ class LayoutsInitialActivity : AppCompatActivity() {
     fun goToActivity(
         newClass: Class<out Activity?>?
     ) {
-        var `in`: Intent? = null
+        val `in`: Intent?
 
         `in` = Intent(this, newClass)
         startActivity(`in`)
@@ -34,22 +32,22 @@ class LayoutsInitialActivity : AppCompatActivity() {
     /** Switches to NestedLayoutsActivity when the associated button is clicked.
      * The colors.xml file gives different background colors to the leaf-level
      * Layouts in order to make the nesting easier to see.  */
-    fun showNestedLayouts(clickedButton: View?) {
+    fun showNestedLayouts() {
         goToActivity(NestedLayoutsActivity::class.java)
     }
 
     /** Switches to the LayoutWeightsActivity when the associated button is clicked.  */
-    fun showLayoutWeights(clickedButton: View?) {
+    fun showLayoutWeights() {
         goToActivity(LayoutWeightsActivity::class.java)
     }
 
     /** Switches to the RelativeLayoutsActivity when the associated button is clicked.  */
-    fun showRelativeLayouts(clickedButton: View?) {
+    fun showRelativeLayouts() {
         goToActivity(RelativeLayoutsActivity::class.java)
     }
 
     /** Switches to the TableLayoutsActivity when the associated button is clicked.  */
-    fun showTableLayouts(clickedButton: View?) {
+    fun showTableLayouts() {
         goToActivity(TableLayoutsActivity::class.java)
     }
 }
